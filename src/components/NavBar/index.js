@@ -1,0 +1,27 @@
+import React from 'react'
+import Logo from '../../assets/logo.png'
+import Cart from '../Cart'
+import Search from '../Search'
+import './index.css'
+
+const NavBar = () => {
+    return (
+        <nav className="nav">
+            <div className="nav-content">
+                <div className="nav-logo">
+                    <a href="/" className="link">
+                        <img src={Logo} alt="Logo" className="logo"/>
+                    </a>
+                </div>
+                <div className="search">
+                    <Search />
+                </div>
+                <div className="cart">
+                    <Cart />
+                </div>
+            </div>
+        </nav>
+    )
+}
+
+export default NavBar
