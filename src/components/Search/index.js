@@ -7,10 +7,10 @@ const Search = () => {
         <div className="search">
             <div className="search-input">
                 <div className="search-field">
-                    <input type="text" placeholder="Pesquisar..." />
+                    <input className="form" type="text" placeholder="Pesquisar..." />
                 </div>
-                <div class="icon"> 
-                    <i className="bi bi-search"></i>
+                <div className="icon"> 
+                    <i className="bi bi-search icon-search"></i>
                 </div>
             </div>
         </div>

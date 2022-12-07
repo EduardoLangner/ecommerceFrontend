@@ -1,1 +1,11 @@
+* { 
+    margin: 0;    
+}
 
+html {
+    background: linear-gradient(to bottom, #f8f8f8 50%, #030100 90%);
+    width: auto;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
