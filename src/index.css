@@ -1,10 +1,7 @@
 * { 
-    margin: 0;    
+    margin: 0;
 }
 
 html {
-    background: linear-gradient(to bottom, #f8f8f8 50%, #030100 90%);
-    width: auto;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: rgb(255, 255, 255);
 }

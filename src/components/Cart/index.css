@@ -1,12 +1,9 @@
 .cart-shopping {
-    font-size: 25px;
+    font-size: 30px;
+    color: #5e17eb;
+    
 }
 
 .cart-shopping:hover {
-    cursor: pointer;
-}
-
-.cart-icon-label {
-    padding-left: 15px;
     cursor: pointer;
 }

@@ -1,6 +1,5 @@
 .search {
     display: flex;
-    width: 50%;
     align-content: center;
     justify-content: center;
 }
@@ -17,25 +16,26 @@
     align-items: center;
     margin: 0px;
     padding: 0px;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
     border-radius: 40px;
+    color: #fff;
 }
 
 .form {
-    border: 1px solid #ccc;
+    border: 1px solid #5e17eb;
     outline: none;
     height: 55px;
     width: 470px;
     border-radius: 40px 0px 0px 40px;
     padding-left: 20px;
     font-size: 15px;
+    border-right: none;
 }
 
 .icon-search {
     display: flex;
     font-size: 20px;
     background-color: #fff;
-    border: 1px solid #ccc;
+    border: 1px solid #5e17eb;
     border-left: none;
     border-radius: 0px 40px 40px 0px;
     height: 57px;
@@ -49,4 +49,5 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    color: #5e17eb;
 }

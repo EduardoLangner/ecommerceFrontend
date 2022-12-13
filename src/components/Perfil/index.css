@@ -1,0 +1,12 @@
+.user-icon-perfil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: #5e17eb;
+    font-size: 40px;
+}
+
+.user-icon-perfil:hover {
+    cursor: pointer;
+}

@@ -1,0 +1,13 @@
+.menu-hamburguer {
+    left: 0;
+    width: 100%;
+    color: #5e17eb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+}
+
+.menu-hamburguer:hover {
+    cursor: pointer;
+}

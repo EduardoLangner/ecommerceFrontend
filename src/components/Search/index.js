@@ -1,8 +1,9 @@
 import React from 'react'
-
+import { useState } from 'react'
 import  './index.css'
 
 const Search = () => {
+
     return (
         <div className="search">
             <div className="search-input">
