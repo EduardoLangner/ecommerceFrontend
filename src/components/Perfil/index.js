@@ -6,7 +6,7 @@ const Perfil = () => {
     return (
         <div className="user">
             <div className="user-icon">
-                <i class="bi bi-person-circle user-icon-perfil"></i>
+                <i className="bi bi-person-circle user-icon-perfil"></i>
             </div>
         </div> 
     )

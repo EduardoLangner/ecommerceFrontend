@@ -28,6 +28,7 @@ const NavBar = () => {
                     <Perfil />
                 </div>
             </div>
+            <div className="border"></div>
         </nav>
     )
 }

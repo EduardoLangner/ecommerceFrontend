@@ -62,5 +62,15 @@
 }
 
 .icon-inactive {
-    display: none
+    display: flex;
+    font-size: 25px;
+    background-color: #fff;
+    border: 1px solid #5e17eb;
+    border-left: none;
+    border-right: none;
+    height: 57px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+    color: transparent;
 }
