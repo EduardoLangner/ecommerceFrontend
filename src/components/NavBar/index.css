@@ -1,6 +1,6 @@
 .nav-content {
     display: grid;
-    grid-template-columns: 2fr 1fr 12fr 1fr 2fr;
+    grid-template-columns: 2fr 1fr 10fr 1fr 1fr 2fr;
     justify-content: center;
     height: 100px;
     align-items: center;

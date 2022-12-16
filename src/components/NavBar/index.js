@@ -4,6 +4,7 @@ import MenuHamb from '../MenuHamb'
 import Cart from '../Cart'
 import Search from '../Search'
 import Perfil from '../Perfil'
+import Heart from '../Heart'
 import './index.css'
 
 const NavBar = () => {
@@ -23,6 +24,9 @@ const NavBar = () => {
                 </div>
                 <div className="cart">
                     <Cart />
+                </div>
+                <div className="heart">
+                    <Heart />
                 </div>
                 <div className="user">
                     <Perfil />
