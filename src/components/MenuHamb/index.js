@@ -3,9 +3,9 @@ import './index.css'
 
 const MenuHamb = () => {
     return (
-        <div className="menu-hamb">
-            <div className="menu-hamb-icon">
-                <i className="bi bi-list menu-hamburguer"></i>
+        <div className='menu-hamb'>
+            <div className='menu-hamb-icon'>
+                <i className='bi bi-list menu-hamburguer'></i>
             </div>
         </div>
     )

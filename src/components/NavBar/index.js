@@ -9,30 +9,30 @@ import './index.css'
 
 const NavBar = () => {
     return (
-        <nav className="nav">
-            <div className="nav-content">
-                <div className="menu-hamb">
+        <nav className='nav'>
+            <div className='nav-content'>
+                <div className='menu-hamb'>
                     <MenuHamb />
                 </div>
-                <div className="nav-logo">
-                    <a href="/" className="link">
-                        <img src={Logo} alt="Logo" className="logo"/>
+                <div className='nav-logo'>
+                    <a href='/' className='link'>
+                        <img src={Logo} alt='Logo' className='logo'/>
                     </a>
                 </div>
-                <div className="search">
+                <div className='search'>
                     <Search />
                 </div>
-                <div className="cart">
+                <div className='cart'>
                     <Cart />
                 </div>
-                <div className="heart">
+                <div className='heart'>
                     <Heart />
                 </div>
-                <div className="user">
+                <div className='user'>
                     <Perfil />
                 </div>
             </div>
-            <div className="border"></div>
+            <div className='border'></div>
         </nav>
     )
 }

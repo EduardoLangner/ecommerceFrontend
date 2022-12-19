@@ -4,9 +4,9 @@ import './index.css'
 const Perfil = () => {
 
     return (
-        <div className="user">
-            <div className="user-icon">
-                <i className="bi bi-person-circle user-icon-perfil"></i>
+        <div className='user'>
+            <div className='user-icon'>
+                <i className='bi bi-person-circle user-icon-perfil'></i>
             </div>
         </div> 
     )
