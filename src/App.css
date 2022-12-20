@@ -1,9 +1,40 @@
-.card-carousel {
-    display: flex;
-    overflow-x: auto;
-    scroll-behavior: smooth;
+.for-you {
+    padding: 20px;
+    margin: 20px 0;
 }
 
-/* .card-carousel::-webkit-scrollbar {
-    display: none;
-} */
+.for-you-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    padding-left: 250px;
+    font-family: 'Teko', sans-serif;
+}
+
+.best-sellers {
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.best-sellers-title {
+    padding: 10px 0px 0px 0px;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    padding-left: 250px;
+    font-family: 'Teko', sans-serif;
+}
+
+.launch {
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.launch-title {
+    padding: 10px 0px 0px 0px;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    padding-left: 250px;
+    font-family: 'Teko', sans-serif;
+}

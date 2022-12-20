@@ -1,49 +1,53 @@
-.card {
-    /* padding: 2px; */
-    padding: 10px;
-    width: 200px;
-    /* background: linear-gradient(45deg, #ffff00, #00ff00, #0099ff, #001aff, #a200ff, #ff0055, #ff0000, #ffff00, #00ff00, #0099ff, #001aff, #a200ff, #ff0055, #ff0000);
-    animation: moveGradient 4.5s alternate-reverse infinite;
-    background-size: 200% 300%;
-    margin: 10px; */
-}
-/* @keyframes moveGradient {
-    0% {
-      background-position: 100% 100%;
-    }
-} */
-
-.card-content {
-    align-items: center;
-
-}
-
-.card-name {
+.card-carousel {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #ffffff;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    transform: infinite;
 }
 
-.card-price {
+.card-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-content {
     display: flex;
-    justify-content: center;
     align-items: center;
-    background-color: #ffffff;
-}
-
-.card-image{
-    background-color: #ffffff;
-}
-
-img {
-    width: 220.33px;
-    height: 190.66px;
+    justify-content: center;
+    width: 70%;
+    padding-left: 300px;
 }
 
 .carousel-buttons {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
+    position: absolute;
+    justify-content: space-between;
+    width: 70%;
+    margin-top: 95px;
+}
+
+.carousel-buttons button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin: 0px;
+    z-index: 2;
+}
+
+.carousel-buttons-style {
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+    font-size: 50px;
+}
+
+.button-left {
+    margin-left: -70px;
+}
+
+.button-right {
+    margin-right: -50px;
 }
