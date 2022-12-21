@@ -2,7 +2,6 @@
     display: flex;
     overflow-x: auto;
     scroll-behavior: smooth;
-    transform: infinite;
 }
 
 .card-carousel::-webkit-scrollbar {
@@ -10,11 +9,9 @@
 }
 
 .carousel-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: 70%;
-    padding-left: 300px;
+    margin: 0 auto;
+    border: 1px solid #e6e6e6;
 }
 
 .carousel-buttons {

@@ -21,8 +21,8 @@ const CardCarousel = () => {
           <div className='card-carousel'ref={carousel} >
             <Card /><Card /><Card /><Card /><Card /><Card /><Card /><Card /><Card /><Card /><Card /><Card /><Card /><Card /><Card /><Card /><Card /><Card /><Card /><Card /><Card /><Card /><Card /><Card /><Card />
             <div className='carousel-buttons'>
-              <button onClick={handleLeftClick}><i className="bi bi-chevron-left carousel-buttons-style button-left"></i></button>
-              <button onClick={handleRightClick}><i className="bi bi-chevron-right carousel-buttons-style button-right"></i></button>
+              <button onClick={handleLeftClick}><i className='bi bi-chevron-left carousel-buttons-style button-left'></i></button>
+              <button onClick={handleRightClick}><i className='bi bi-chevron-right carousel-buttons-style button-right'></i></button>
             </div>
           </div>  
         </div>
