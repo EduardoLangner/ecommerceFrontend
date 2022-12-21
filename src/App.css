@@ -1,5 +1,5 @@
 .for-you {
-    padding: 20px;
+    padding: 20px 10px;
     margin: 20px 0;
 }
 
@@ -12,7 +12,7 @@
 }
 
 .best-sellers {
-    padding: 10px;
+    padding: 20px 10px;
     margin: 10px 0;
 }
 
@@ -26,7 +26,7 @@
 }
 
 .launch {
-    padding: 10px;
+    padding: 20px 10px;
     margin: 10px 0;
 }
 
