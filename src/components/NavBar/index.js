@@ -5,6 +5,7 @@ import Cart from '../Cart'
 import Search from '../Search'
 import Perfil from '../Perfil'
 import Heart from '../Heart'
+import { Link } from 'react-router-dom'
 import './index.css'
 
 const NavBar = () => {
@@ -15,9 +16,9 @@ const NavBar = () => {
                     <MenuHamb />
                 </div>
                 <div className='nav-logo'>
-                    <a href='/' className='link'>
+                    <Link to='/' className='link'>
                         <img src={Logo} alt='Logo' className='logo'/>
-                    </a>
+                    </Link>
                 </div>
                 <div className='search'>
                     <Search />

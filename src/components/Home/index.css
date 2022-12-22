@@ -1,0 +1,40 @@
+.for-you {
+    padding: 20px 10px;
+    margin: 20px 0;
+}
+
+.for-you-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    padding-left: 280px;
+    font-family: 'Teko', sans-serif;
+}
+
+.best-sellers {
+    padding: 20px 10px;
+    margin: 10px 0;
+}
+
+.best-sellers-title {
+    padding: 10px 0px 0px 0px;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    padding-left: 280px;
+    font-family: 'Teko', sans-serif;
+}
+
+.launch {
+    padding: 20px 10px;
+    margin: 10px 0;
+}
+
+.launch-title {
+    padding: 10px 0px 0px 0px;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    padding-left: 280px;
+    font-family: 'Teko', sans-serif;
+}
