@@ -1,13 +1,14 @@
 import React from 'react'
 import NavBar from './components/NavBar'
 import CardCarousel from './components/CardCarousel'
+import Login from './components/Login'
 import './App.css'
 
 function App() {
 
   return (
       <React.StrictMode>
-        <div className='app'>
+        {/* <div className='app'>
           <div className='nav'>
             <NavBar />
           </div>
@@ -29,6 +30,9 @@ function App() {
               <CardCarousel />
             </div>  
           </section> 
+        </div>  */}
+        <div className='login'>
+          <Login />
         </div>
       </React.StrictMode>
   )
