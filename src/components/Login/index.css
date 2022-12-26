@@ -35,7 +35,7 @@ body {
     margin-bottom: 40px;
 }
 
-.input-email {
+.inputs-signin input{
     width: 300px;
     height: 45px;
     display: flex;
@@ -46,38 +46,12 @@ body {
     border: none;
 }
 
-.icon-email {
+.inputs-signin i {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     font-size: 23px;
-    border-bottom: 1.5px solid #020202;
-    width: 350px;
-    height: 50px;
-}
-
-
-
-.input-password {
-    width: 300px;
-    height: 45px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    outline: none;
-    border: none;
-    font-family: 'Hind Siliguri', sans-serif;
-}
-
-.icon-password {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    font-size: 23px;
-    border-bottom: 1.5px solid #020202;
     width: 350px;
     height: 50px;
 }
@@ -107,19 +81,18 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin: 20px;
-     font-family: 'Hind Siliguri', sans-serif;
+    margin-top: 20px;
+    font-family: 'Hind Siliguri', sans-serif;
 }
 
-
-form i input {
-    margin: 5px;
+form .login-input-email {
+    border-bottom: 1.5px solid #000000;
 }
 
-form i {
-    margin: 10px;
+form .login-input-password {
+    border-bottom: 1.5px solid #000000;
 }
 
 button {
-    margin: 10px;
+    margin-top: 40px;
 }
