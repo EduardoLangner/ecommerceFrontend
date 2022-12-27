@@ -54,7 +54,7 @@ body {
 .inputs-signup i {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     font-size: 23px;
     width: 350px;
@@ -98,30 +98,42 @@ button {
     margin-top: 40px;
 }
 
-form .signup-input-name {
+.signup-input-name {
     border-bottom: 1.5px solid #000000;
 }
 
-form .signup-input-cpf {
+.signup-input-cpf {
     border-bottom: 1.5px solid #000000;
 }
 
-form .signup-input-birth-date {
+.signup-input-telephone {
     border-bottom: 1.5px solid #000000;
 }
 
-form .signup-input-telephone {
+.signup-input-email {
     border-bottom: 1.5px solid #000000;
 }
 
-form .signup-input-email {
+.signup-input-password {
     border-bottom: 1.5px solid #000000;
 }
 
-form .signup-input-password {
+.signup-input-confirm-password {
     border-bottom: 1.5px solid #000000;
 }
 
-form .signup-input-confirmPassword {
-    border-bottom: 1.5px solid #000000;
+.error {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: left;
+}
+
+.error i{
+    color: red;
+    font-size: 13px;
+    font-family: 'Hind Siliguri', sans-serif;
+    height: 20px;
+    display: grid;    
+    grid-template-columns: 2fr 35fr;
 }
