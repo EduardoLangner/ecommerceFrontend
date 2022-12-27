@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Logo from '../../assets/logo.png'
 import { Link } from 'react-router-dom'
 import { validateName, validateCPF, validateTelephone, validadeEmail, validatePassword, validateConfirmPassword } from '../../utils/regex.js'
@@ -19,7 +19,7 @@ const CreateAccount = () => {
     const [telephoneError, setTelephoneError] = useState(false)
     const [emailError, setEmailError] = useState(false)
     const [passwordError, setPasswordError] = useState(false)
-
+    
     const validate = () => {
         
         if(!validateName.test(name) || name === '') {
@@ -27,7 +27,7 @@ const CreateAccount = () => {
             document.querySelector('.signup-input-name').style.borderBottom = '1.5px solid red'
         } else {
             setNameError(false)
-            document.querySelector('.signup-input-name').style.borderBottom = '1.5px solid #000'
+            document.querySelector('.signup-input-name').style.borderBottom = '1.5px solid green'
         }
 
         if(!validateCPF.test(cpf) || cpf === '') {
@@ -35,7 +35,7 @@ const CreateAccount = () => {
             document.querySelector('.signup-input-cpf').style.borderBottom = '1.5px solid red'
         } else {
             setCPFError(false)
-            document.querySelector('.signup-input-cpf').style.borderBottom = '1.5px solid #000'
+            document.querySelector('.signup-input-cpf').style.borderBottom = '1.5px solid green'
         }
 
         if(!validateTelephone.test(telephone) || telephone === '') {
@@ -43,7 +43,7 @@ const CreateAccount = () => {
             document.querySelector('.signup-input-telephone').style.borderBottom = '1.5px solid red'
         } else {
             setTelephoneError(false)
-            document.querySelector('.signup-input-telephone').style.borderBottom = '1.5px solid #000'
+            document.querySelector('.signup-input-telephone').style.borderBottom = '1.5px solid green'
         }
 
         if(!validadeEmail.test(email) || email === '') {
@@ -51,7 +51,7 @@ const CreateAccount = () => {
             document.querySelector('.signup-input-email').style.borderBottom = '1.5px solid red'
         } else {
             setEmailError(false)
-            document.querySelector('.signup-input-email').style.borderBottom = '1.5px solid #000'
+            document.querySelector('.signup-input-email').style.borderBottom = '1.5px solid green'
         }
 
         if(!validatePassword.test(password) || password === '') {
@@ -59,7 +59,7 @@ const CreateAccount = () => {
             document.querySelector('.signup-input-password').style.borderBottom = '1.5px solid red'
         } else {
             setPasswordError(false)
-            document.querySelector('.signup-input-password').style.borderBottom = '1.5px solid #000'
+            document.querySelector('.signup-input-password').style.borderBottom = '1.5px solid green'
         }
 
         if(!validateConfirmPassword.test(confirmPassword)){
@@ -70,17 +70,13 @@ const CreateAccount = () => {
             document.querySelector('.signup-input-confirm-password').style.borderBottom = '1.5px solid red'
         } else {
             setPasswordError(false)
-            document.querySelector('.signup-input-confirm-password').style.borderBottom = '1.5px solid #000'
+            document.querySelector('.signup-input-confirm-password').style.borderBottom = '1.5px solid green'
         }
     }
-        // !validateName.test(name) ? setNameError(true) : setNameError(false)
-        // !validateCPF.test(cpf) ? setCPFError(true) : setCPFError(false)
-        // !validateTelephone.test(telephone) ? setTelephoneError(true) : setTelephoneError(false)
-        // !validadeEmail.test(email) ? setEmailError(true) : setEmailError(false)
-        // !validatePassword.test(password) ? setPasswordError(true) : setPasswordError(false)
            
     return (
         <div className='create-account'>
+            <script src="/js/jquery.min.js"></script>
             <div className='create-account-content'>
                 <div className='logo-create-account'>
                     <img src={Logo} alt='Logo' />
@@ -97,21 +93,22 @@ const CreateAccount = () => {
                                 </input>
                             </i>
                         </div>{nameError && <div className='error'><i className="bi bi-exclamation-triangle triangle"><p className='name-error'>Nome inválido</p></i></div>}
-
-                        <div className='signup-input-cpf'>
+                        <div  className='signup-input-cpf'>
                             <i className='bi bi-person-vcard icon-cpf'>
-                                <input type='text' placeholder='CPF (000.000.000-00)*' 
-                                    className='input-cpf' 
-                                    value={cpf} 
+                                <input type='text' placeholder='CPF*'
+                                    className='input-cpf'
+                                    value={cpf}
                                     onChange={(e) => {setCPF(e.target.value)}}>
                                 </input>
                             </i>
                         </div>{cpfError && <div className='error'><i className="bi bi-exclamation-triangle triangle"><p className='cpf-error'>CPF inválido</p></i></div>}
 
+
                         <div className='signup-input-telephone'>
                             <i className='i className="bi bi-telephone icon-telephone'>
                                 <input type='tel' placeholder='Telefone celular*' className='input-telephone' 
                                     value={telephone}  
+                                    maxLength='15'
                                     onChange={(e) => {setTelephone(e.target.value)}}>
                                 </input>
                             </i>
