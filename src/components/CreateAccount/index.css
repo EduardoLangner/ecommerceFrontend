@@ -27,12 +27,12 @@ body {
 
 .logo-create-account {
     width: 150px;
-    height: 150px;
+    height: 80px;
     display: flex;
     flex-direction: center;
     justify-content: center;
     align-items: center;
-    margin-bottom: 90px;
+    margin-bottom: 50px;
 }
 
 .inputs-signup input{
@@ -59,6 +59,7 @@ body {
     font-size: 23px;
     width: 350px;
     height: 50px;
+    color: #8d8b8b;
 }
 
 .create-account-button {
@@ -136,4 +137,18 @@ button {
     height: 20px;
     display: grid;    
     grid-template-columns: 2fr 35fr;
+}
+
+.requisites-password {
+    margin: 10px;
+    padding: 10px;
+    font-family: 'Hind Siliguri', sans-serif;
+    font-size: 13px;
+    background-color: #5e17eb27;
+    border-radius: 10px;
+    border: 1px solid #5e17eb;
+}
+
+.title {
+    font-weight: bold;
 }
