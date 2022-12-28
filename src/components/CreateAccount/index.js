@@ -88,12 +88,14 @@ const CreateAccount = () => {
         } else {
             document.querySelector('.numbers').style.color = 'red'
         }
-        
+
         if(validator.isStrongPassword(value, {minSymbols: 1})) {
             document.querySelector('.symbols').style.color = 'green'
         } else {
             document.querySelector('.symbols').style.color = 'red'
         }
+        
+    
     }
            
     return (
@@ -151,7 +153,7 @@ const CreateAccount = () => {
                                 <input type='password' placeholder='Crie sua senha*' 
                                     className='input-password' 
                                     value={password}
-                                    onChange={(e) => {setPassword(e.target.value)}}>
+                                    onChange={(e) => {setPassword(validatePassword(e.target.value))}}>
                                 </input>
                             </i>
                         </div>
