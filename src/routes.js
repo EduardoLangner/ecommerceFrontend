@@ -1,8 +1,8 @@
 import React from "react";
 import { Route, BrowserRouter, Routes } from "react-router-dom";
-import Home from './components/Home'
-import SignIn from './components/SignIn'
-import SignUp from './components/CreateAccount'
+import Home from './components/organisms/Home'
+import SignIn from './components/organisms/SignIn'
+import SignUp from './components/molecules/CreateAccount'
 
 const Router = () => {
     return(

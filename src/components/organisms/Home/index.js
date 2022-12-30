@@ -1,6 +1,6 @@
 import React from 'react'
-import NavBar from '../NavBar'
-import CardCarousel from '../CardCarousel'
+import NavBar from '../../molecules/NavBar'
+import CardCarousel from '../../molecules/CardCarousel'
 import './index.css'
 
 const Home = () => {

@@ -1,5 +1,5 @@
 import React from 'react'
-import Fone from '../../assets/fone.png'
+import Fone from '../../../assets/fone.png'
 import './index.css'
 
 const Card = () => {

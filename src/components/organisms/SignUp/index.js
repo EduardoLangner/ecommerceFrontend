@@ -1,5 +1,5 @@
 import React from 'react'
-import CreateAccount from '../CreateAccount'
+import CreateAccount from '../../molecules/CreateAccount'
 import './index.css'
 
 const SignUp = () => {
