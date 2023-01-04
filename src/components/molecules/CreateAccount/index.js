@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Logo from '../../../assets/logo.png'
 import { Link } from 'react-router-dom'
 import { validateName, validateTelephone, validadeEmail } from '../../../utils/regex.js'
@@ -24,9 +24,8 @@ const CreateAccount = () => {
     const [eyePassword, setEyePassword] = useState('eye')
     const [eyeConfirmPassword, setEyeConfirmPassword] = useState('eye')
     
-    
     const validateInputs = () => {
-        
+
         if(!validateName.test(name) || name === '') {
             setNameError(true)
             document.querySelector('.signup-input-name').style.borderBottom = '1.5px solid red'
@@ -62,7 +61,10 @@ const CreateAccount = () => {
         if(password === '') {
             setPasswordError(true)
             document.querySelector('.signup-input-password').style.borderBottom = '1.5px solid red'
-        } else if(password !== ''){
+        } else if(validator.isStrongPassword(password) === false) {
+            setPasswordError(true)
+            document.querySelector('.signup-input-password').style.borderBottom = '1.5px solid red'
+        } else {
             setPasswordError(false)
             document.querySelector('.signup-input-password').style.borderBottom = '1.5px solid green'
         }
@@ -75,7 +77,6 @@ const CreateAccount = () => {
             document.querySelector('.signup-input-confirm-password').style.borderBottom = '1.5px solid green'
             console.log('entrou')
         }
-
     }
 
     const validatePassword = (value) => {
@@ -204,17 +205,20 @@ const CreateAccount = () => {
             .replace(/(\d{4})-(\d)(\d{4})/, '$1$2-$3')
             .replace(/(-\d{4})\d+?$/, '$1')
     }
-           
+
+    // useEffect(() => {
+    //     validateInputs()
+    // }, [name, email, password, confirmPassword, cpf, telephone])
+          
     return (
         <div className='create-account'>
             <div className='create-account-container'>
                 <div className='create-account-content'>
                     <div className='logo-create-account'>
-                        <img src={Logo} alt='Logo' />
+                        <img src={Logo} alt='Logo' className='logo-create-account-image'/>
                     </div>
                     <div className='create-account-form'>
-                        <form className='inputs-signup'>
-
+                        <form className='form-inputs-signup'>
                             <div className='signup-input-name'>
                                 <i className='bi bi-person icon-name'>
                                     <input type='text' placeholder='Nome completo*' 
@@ -259,19 +263,19 @@ const CreateAccount = () => {
                             <div className='signup-input-password'>
                                 <i className='bi bi-lock icon-password'>
                                     <input type='password' placeholder='Crie sua senha*' 
-                                        className='input-password' 
-                                        value={password}
-                                        onChange={(e) => {setPassword(e.target.value, validatePassword(e.target.value))}}
-                                        onInput={() => {setInvisible('visible')}}>
+                                            className='input-password' 
+                                            value={password}
+                                            onChange={(e) => {setPassword(e.target.value, validatePassword(e.target.value))}}
+                                            onInput={() => {setInvisible('visible')}}>
                                     </input>
-                                    <div className='icon-eye-password'>
-                                        <i onClick={visiblePassword} className={`bi bi-${eyePassword}`}></i>
-                                    </div>
                                 </i>
-                            </div>{passwordError}
+                                <div className='icon-eye-password'>
+                                    <i onClick={visiblePassword} className={`bi bi-${eyePassword}`}></i>
+                                </div>
+                            </div>{passwordError && <div className='error'><i className="bi bi-exclamation-triangle triangle"><p className='password-error'>min de</p></i></div>}
                             <div className={`requisites-password-${invisible}`}>
                                 <div className='requisites-characters'>
-                                    <p className='characters'>No mínimo 8 caracteres</p>
+                                    <p className='characters'>8 caracteres</p>
                                 </div>
                                 <div className='requisites-uppercase'>
                                     <p className='uppercase'>1 letra maiúscula</p>
@@ -294,16 +298,16 @@ const CreateAccount = () => {
                                         value={confirmPassword}
                                         onChange={(e) => {setConfirmPassword(e.target.value)}}>
                                     </input>
-                                    <div className='icon-eye-confirm-password'>
-                                            <i onClick={visibleConfirmPassword} className={`bi bi-${eyeConfirmPassword}`}></i>
-                                    </div>
                                 </i>
+                                <div className='icon-eye-confirm-password'>
+                                        <i onClick={visibleConfirmPassword} className={`bi bi-${eyeConfirmPassword}`}></i>
+                                </div>
                             </div>{confirmPasswordError && <div className='error'><i className="bi bi-exclamation-triangle triangle"><p className='confirm-password-error'>As senhas não coincidem</p></i></div>}
                         </form>
                         <button className='create-account-button' type='submit' onClick={validateInputs}>Criar conta</button>
-                    </div>
-                    <div className='create-account-footer'>
-                        <p className='sign-click'>Já possui cadastro? <Link className='click' to='/signin'>Clique aqui</Link></p>
+                        <div className='create-account-footer'>
+                            <p className='sign-click'>Já possui cadastro? <Link className='click' to='/signin'>Clique aqui</Link></p>
+                        </div>
                     </div>
                 </div>
             </div>
