@@ -24,7 +24,8 @@ const CreateAccount = () => {
     const [eyePassword, setEyePassword] = useState('eye')
     const [eyeConfirmPassword, setEyeConfirmPassword] = useState('eye')
     
-    const validateInputs = () => {
+
+    const handleName = () => {
 
         if(!validateName.test(name) || name === '') {
             setNameError(true)
@@ -33,7 +34,10 @@ const CreateAccount = () => {
             setNameError(false)
             document.querySelector('.signup-input-name').style.borderBottom = '1.5px solid green'
         }
+    }
 
+    const handleCPF = () => {
+        
         if(isValidCPF(cpf) === false || cpf === '') {
             setCPFError(true)
             document.querySelector('.signup-input-cpf').style.borderBottom = '1.5px solid red'
@@ -41,6 +45,9 @@ const CreateAccount = () => {
             setCPFError(false)
             document.querySelector('.signup-input-cpf').style.borderBottom = '1.5px solid green'
         }
+    }
+
+    const handleTelephone = () => {
 
         if(!validateTelephone.test(telephone) || telephone === '') {
             setTelephoneError(true)
@@ -49,6 +56,9 @@ const CreateAccount = () => {
             setTelephoneError(false)
             document.querySelector('.signup-input-telephone').style.borderBottom = '1.5px solid green'
         }
+    }
+    
+    const handleEmail = () => {
 
         if(!validadeEmail.test(email) || email === '') {
             setEmailError(true)
@@ -57,18 +67,23 @@ const CreateAccount = () => {
             setEmailError(false)
             document.querySelector('.signup-input-email').style.borderBottom = '1.5px solid green'
         }
+    }
+
+    const handlePassword = () => {
 
         if(password === '') {
             setPasswordError(true)
             document.querySelector('.signup-input-password').style.borderBottom = '1.5px solid red'
-        } else if(validator.isStrongPassword(password) === false) {
-            setPasswordError(true)
-            document.querySelector('.signup-input-password').style.borderBottom = '1.5px solid red'
-        } else {
+        } else if(validator.isStrongPassword(password) === true){
             setPasswordError(false)
             document.querySelector('.signup-input-password').style.borderBottom = '1.5px solid green'
         }
 
+        console.log(password)
+    }
+
+    const handleConfirmPassword = () => {
+        
         if(confirmPassword !== password || confirmPassword === '') {
             setConfirmPasswordError(true)
             document.querySelector('.signup-input-confirm-password').style.borderBottom = '1.5px solid red'       
@@ -77,6 +92,15 @@ const CreateAccount = () => {
             document.querySelector('.signup-input-confirm-password').style.borderBottom = '1.5px solid green'
             console.log('entrou')
         }
+    }
+
+    const validateInputs = () => {
+        handleName()
+        handleCPF()
+        handleTelephone()
+        handleEmail()
+        handlePassword()
+        handleConfirmPassword()
     }
 
     const validatePassword = (value) => {
@@ -122,7 +146,6 @@ const CreateAccount = () => {
             document.querySelector('.characters').style.color = 'rgb(231, 38, 38)'
             document.querySelector('.signup-input-password').style.borderBottom = '1.5px solid red'
         }
-
     }        
 
     const visiblePassword = () => {
@@ -205,11 +228,7 @@ const CreateAccount = () => {
             .replace(/(\d{4})-(\d)(\d{4})/, '$1$2-$3')
             .replace(/(-\d{4})\d+?$/, '$1')
     }
-
-    // useEffect(() => {
-    //     validateInputs()
-    // }, [name, email, password, confirmPassword, cpf, telephone])
-          
+     
     return (
         <div className='create-account'>
             <div className='create-account-container'>
@@ -224,6 +243,7 @@ const CreateAccount = () => {
                                     <input type='text' placeholder='Nome completo*' 
                                         className='input-name' 
                                         value={name} 
+                                        onInput={handleName}
                                         onChange={(e) => {setName(e.target.value)}}>
                                     </input>
                                 </i>
@@ -235,6 +255,7 @@ const CreateAccount = () => {
                                         className='input-cpf'
                                         value={cpf}
                                         maxLength='14'
+                                        onInput={handleCPF}
                                         onChange={(e) => {setCPF(maskCpf(e.target.value))}}>
                                     </input>
                                 </i>
@@ -245,6 +266,7 @@ const CreateAccount = () => {
                                     <input type='tel' placeholder='Telefone*' className='input-telephone'
                                         value={telephone}  
                                         maxLength='15'
+                                        onInput={handleTelephone}
                                         onChange={(e) => {setTelephone(maskTelephone(e.target.value))}}>
                                     </input>
                                 </i>
@@ -255,6 +277,7 @@ const CreateAccount = () => {
                                     <input type='email' placeholder='E-mail*' 
                                         className='input-email' 
                                         value={email} 
+                                        onInput={handleEmail}
                                         onChange={(e) => {setEmail(e.target.value)}}>
                                         </input>
                                     </i>
@@ -266,13 +289,16 @@ const CreateAccount = () => {
                                             className='input-password' 
                                             value={password}
                                             onChange={(e) => {setPassword(e.target.value, validatePassword(e.target.value))}}
-                                            onInput={() => {setInvisible('visible')}}>
+                                            onInput={() => {
+                                                handlePassword()
+                                                setInvisible('visible')}}>
                                     </input>
                                 </i>
-                                <div className='icon-eye-password'>
+                                <div className='icon-eye-password-signup'>
                                     <i onClick={visiblePassword} className={`bi bi-${eyePassword}`}></i>
                                 </div>
-                            </div>{passwordError && <div className='error'><i className="bi bi-exclamation-triangle triangle"><p className='password-error'>min de</p></i></div>}
+                            </div>{passwordError && <div className='error'><i className="bi bi-exclamation-triangle triangle"><p className='password-error'>A senha inserida é inválida</p></i></div>}
+                            
                             <div className={`requisites-password-${invisible}`}>
                                 <div className='requisites-characters'>
                                     <p className='characters'>8 caracteres</p>
@@ -296,6 +322,7 @@ const CreateAccount = () => {
                                     <input type='password' placeholder='Confirme sua senha*'
                                         className='input-confirm-password'
                                         value={confirmPassword}
+                                        onInput={handleConfirmPassword}
                                         onChange={(e) => {setConfirmPassword(e.target.value)}}>
                                     </input>
                                 </i>

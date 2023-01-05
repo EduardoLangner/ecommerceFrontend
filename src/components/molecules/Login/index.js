@@ -49,8 +49,8 @@ const Login = () => {
                     <div className='logo-login'>
                         <img src={Logo} alt='Logo' />
                     </div>
-                    <div className='login-input'>
-                        <form className='inputs-signin'>
+                    <div className='inputs-login-form'>
+                        <form className='form-inputs-login'>
                             <div className='login-input-email'>
                                 <i className='bi bi-envelope icon-email'>
                                     <input type='email' placeholder='E-mail' className='input-email'
@@ -66,16 +66,16 @@ const Login = () => {
                                     value={password}
                                     onChange={(e) => {setPassword(e.target.value)}}>
                                     </input>
-                                    <div className='icon-eye-password'>
-                                        <i onClick={visiblePassword} className={`bi bi-${eyePassword}`}></i>
-                                    </div>
                                 </i>
+                                <div className='icon-eye-password-login'>
+                                    <i onClick={visiblePassword} className={`bi bi-${eyePassword}`}></i>
+                                </div>
                             </div>{passwordError && <div className='error'><i className="bi bi-exclamation-triangle triangle"><p className='name-error'>O campo senha não pode ser vazio</p></i></div>}
                         </form>
                         <button className='login-button' type='submit' onClick={validateInputs}>Login</button>
-                    </div>
-                    <div className='login-footer'>
-                        <p className='sign-click'>Não possui cadastro? <Link className='click' to='/signup'>Clique aqui</Link></p>
+                        <div className='login-footer'>
+                            <p className='login-click'>Não possui cadastro? <Link className='click' to='/signup'>Clique aqui</Link></p>
+                        </div>
                     </div>
                 </div>
             </div>
