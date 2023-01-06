@@ -71,7 +71,7 @@ const CreateAccount = () => {
 
     const handlePassword = (value) => {
 
-        if(value === '') {
+        if(value === '' || password === '') {
             setPasswordError(true)
             document.querySelector('.signup-input-password').style.borderBottom = '1.5px solid red'
         } else if(validator.isStrongPassword(value, { minLength: 8, minLowercase: 1, minUppercase: 1, minNumbers: 1, minSymbols: 1 }) === false) {
