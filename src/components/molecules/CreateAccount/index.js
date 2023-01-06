@@ -69,17 +69,21 @@ const CreateAccount = () => {
         }
     }
 
-    const handlePassword = () => {
+    const handlePassword = (value) => {
 
-        if(password === '') {
+        if(value === '') {
             setPasswordError(true)
             document.querySelector('.signup-input-password').style.borderBottom = '1.5px solid red'
-        } else if(validator.isStrongPassword(password) === true){
+        } else if(validator.isStrongPassword(value, { minLength: 8, minLowercase: 1, minUppercase: 1, minNumbers: 1, minSymbols: 1 }) === false) {
+            setPasswordError(true)
+            document.querySelector('.signup-input-password').style.borderBottom = '1.5px solid red'
+        } else {
             setPasswordError(false)
             document.querySelector('.signup-input-password').style.borderBottom = '1.5px solid green'
         }
 
-        console.log(password)
+
+        console.log(`handlePassword: ${value}`)
     }
 
     const handleConfirmPassword = () => {
@@ -146,6 +150,18 @@ const CreateAccount = () => {
             document.querySelector('.characters').style.color = 'rgb(231, 38, 38)'
             document.querySelector('.signup-input-password').style.borderBottom = '1.5px solid red'
         }
+
+        if(validator.isStrongPassword(value, {minLength: 8, minLowercase: 0, minUppercase: 0, minNumbers: 0, minSymbols: 0})){
+            document.querySelector('.characters').style.backgroundColor = 'rgb(229, 255, 241)'
+            document.querySelector('.characters').style.color = 'rgb(39, 178, 100)'
+            document.querySelector('.signup-input-password').style.borderBottom = '1.5px solid green'
+        } else {
+            document.querySelector('.characters').style.backgroundColor = 'rgb(255, 229, 230)'
+            document.querySelector('.characters').style.color = 'rgb(231, 38, 38)'
+            document.querySelector('.signup-input-password').style.borderBottom = '1.5px solid red'
+        }
+
+        console.log(`validatePassword ${value}`)
     }        
 
     const visiblePassword = () => {
@@ -288,9 +304,8 @@ const CreateAccount = () => {
                                     <input type='password' placeholder='Crie sua senha*' 
                                             className='input-password' 
                                             value={password}
-                                            onChange={(e) => {setPassword(e.target.value, validatePassword(e.target.value))}}
+                                            onChange={(e) => {setPassword(e.target.value, validatePassword(e.target.value), handlePassword(e.target.value))}}
                                             onInput={() => {
-                                                handlePassword()
                                                 setInvisible('visible')}}>
                                     </input>
                                 </i>
