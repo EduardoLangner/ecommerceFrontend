@@ -173,6 +173,186 @@
     margin: 0px;
 }
 
+@media screen and (min-width: 280px){
+    .create-account-container{
+        width: 95.2vw;
+        height: 98.2vh;
+    }
+
+    .form-inputs-signup {
+        width: 100%;
+        height: 70%;
+    }
+
+    .create-account-footer {
+        margin-top: 20px;
+    }
+
+    .signup-input-name, .signup-input-cpf, .signup-input-telephone, .signup-input-email, .signup-input-password, .signup-input-confirm-password {
+        height: 10%;
+        margin-top: 10px;
+        margin-bottom: 1px;
+    }
+
+    .error i {
+        font-size: 10px;
+    }
+
+    .uppercase, .lowercase, .numbers, .characters, .symbols {
+        
+        font-size: 11px;
+    }
+
+    .logo-create-account {
+        height: 20%;
+    }
+
+    .logo-create-account img{
+        height: 100%;
+        width: 100%;
+    }
+
+    .create-account-footer {
+        margin-top: 10px;
+        font-size: 12px;
+    }
+
+    .create-account-button {
+        font-size: 15px;
+        height: 40px;
+        margin: 10px;
+    }
+
+    .create-account-form {
+        width: 100%;
+        height: 70%;
+    }
+        
+}
+
+@media screen and (min-width: 360px){
+    .create-account-container{
+        width: 95.2vw;
+        height: 98.2vh;
+    }
+
+    .form-inputs-signup {
+        width: 100%;
+        height: 70%;
+    }
+
+    .create-account-footer {
+        margin-top: 20px;
+    }
+
+    .signup-input-name, .signup-input-cpf, .signup-input-telephone, .signup-input-email, .signup-input-password, .signup-input-confirm-password {
+        height: 10%;
+    }
+        
+}
+
+@media screen and (min-width: 375px){
+    .create-account-container{
+        width: 95.3vw;
+        height: 98.2vh;
+    }
+
+    .form-inputs-signup {
+        width: 100%;
+        height: 85%;
+    }
+
+    .form-inputs-signup {
+        width: 100%;
+        height: 70%;
+    }
+
+    .signup-input-name, .signup-input-cpf, .signup-input-telephone, .signup-input-email, .signup-input-password, .signup-input-confirm-password {
+        width: 80%;
+        height: 7%;
+        margin-top: 10px;
+        margin-bottom: 1px;
+    }
+        
+}
+
+@media screen and (min-width: 390px){
+    .create-account-container{
+        height: 98.1vh;
+        width: 95.1vw;
+    } 
+
+    .create-account-footer {
+        margin-top: 20px;
+    }
+
+    .form-inputs-signup {
+        width: 100%;
+        height: 70%;
+    }
+
+    .signup-input-name, .signup-input-cpf, .signup-input-telephone, .signup-input-email, .signup-input-password, .signup-input-confirm-password {
+        height: 7%;
+        margin-top: 10px;
+        margin-bottom: 1px;
+    }
+
+    .create-account-footer {
+        margin-top: 0px;
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 412px){
+    .create-account-container{
+        height: 98.1vh;
+    } 
+
+    .create-account-footer {
+        margin-top: 20px;
+    }
+
+    .form-inputs-signup {
+        width: 100%;
+        height: 70%;
+    }
+
+    .signup-input-name, .signup-input-cpf, .signup-input-telephone, .signup-input-email, .signup-input-password, .signup-input-confirm-password {
+        height: 7%;
+        margin-top: 10px;
+        margin-bottom: 1px;
+    }
+
+    .error i {
+        font-size: 13px;
+    }
+
+    .uppercase, .lowercase, .numbers, .characters, .symbols {
+        
+        font-size: 15px;
+    }
+
+    .form-inputs-signup input::placeholder {
+        font-size: 15px;
+    }
+
+    .create-account-footer {
+        margin-top: 0px;
+        font-size: 15px;
+    }
+
+}
+
+@media screen and (min-width: 414px){
+    .create-account-container{
+        height: 98.1vh;
+    } 
+
+    .create-account-footer {
+        margin-top: 20px;
+    }
+}
+
 @media screen and (min-width: 425px){
     .create-account-container{
         width: 95.5vw;
@@ -208,12 +388,10 @@
         font-size: 15px;
     }
 
-    .form-inputs-signup {
-        height: 70%;
-    }
-
     .signup-input-name, .signup-input-cpf, .signup-input-telephone, .signup-input-email, .signup-input-password, .signup-input-confirm-password {
         height: 10%;
+        margin-top: 10px;
+        margin-bottom: 1px;
     }
 
     .create-account-button {
@@ -225,11 +403,11 @@
     }
     
     .form-inputs-signup i{
-        font-size: 23px;
+        font-size: 25px;
     }
     
     .form-inputs-signup input::placeholder {
-        font-size: 15px;
+        font-size: 20px;
     }
 
     .icon-eye-password-signup i {
@@ -241,15 +419,63 @@
     }
 
     .error i{
-        font-size: 12.5px;
+        font-size: 13px;
     }
 
     .uppercase, .lowercase, .numbers, .characters, .symbols {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .input-name, .input-cpf, .input-telephone, .input-email, .input-password, .input-confirm-password {
         font-size: 15px;
+        height: 80%;
+    }
+
+    .create-account-footer {
+        margin-top: 0px;
+        font-size: 20px;
+    }
+
+    .logo-create-account {
+        width: 40%;
+        height: 25%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+}
+
+@media screen and (min-width: 820px){
+        
+    .form-inputs-signup input::placeholder {
+        font-size: 20px;
+    }
+
+    .form-inputs-signup i{
+        font-size: 25px;
+    }
+
+    .signup-input-name, .signup-input-cpf, .signup-input-telephone, .signup-input-email, .signup-input-password, .signup-input-confirm-password {
+        height: 7.5%;
+        margin-top: 10px;
+        margin-bottom: 0px;
+    }
+
+    .error i{
+        font-size: 15px;
+        margin: 0;
+    }
+
+    .uppercase, .lowercase, .numbers, .characters, .symbols {
+        width: 95%;
+        height: 10%;
+        font-size: 17px;
+    }
+
+    .logo-create-account {
+        width: 60%;
+        height: 25%;
     }
 
 }
@@ -264,6 +490,32 @@
         width: 50vw;
         height: 90vh
     }
+
+    .signup-input-name, .signup-input-cpf, .signup-input-telephone, .signup-input-email, .signup-input-password, .signup-input-confirm-password {
+        width: 80%;
+        height: 10%;
+        margin-top: 10px;
+        margin-bottom: 1px;
+    }
+
+    .create-account-footer {
+        margin: 0px;
+    }
+
+    .create-account-button {
+        width: 80%;
+        height: 10%;
+        margin-top: 40px;
+    }
+
+    .logo-create-account {
+        width: 45%;
+        height: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
 }
 
 @media screen and (min-width: 1440px){
@@ -275,6 +527,73 @@
     .create-account-content {
         width: 22vw;
         height: 90vh
+    }
+    
+    .form-inputs-signup i{
+        font-size: 20px;
+    }
+    
+    .form-inputs-signup input::placeholder {
+        font-size: 15px;
+    }
+
+    .create-account-footer {
+        margin: 0px;
+        font-size: 15px;
+    }
+
+    .create-account-button {
+        font-size: 16px;
+        height: 40px;
+        margin: 0px;
+    }
+
+    .error i {
+        font-size: 12px;
+    }
+
+    .uppercase, .lowercase, .numbers, .characters, .symbols {
+        font-size: 13px;
+    }
+}
+
+@media screen and (min-width: 1920px){
+    .create-account-container{
+        width: 22.1vw;
+        height: 90.3vh;
+    }
+
+    .create-account-content {
+        width: 22vw;
+        height: 90vh
+    }
+
+    .create-account-footer {
+        margin: 0px;
+        font-size: 18px;
+    }
+
+    .create-account-button {
+        font-size: 16px;
+        height: 40px;
+        margin: 0px;
+    }
+
+    .form-inputs-signup {
+        width: 100%;
+        height: 70%;
+    }
+    
+    .form-inputs-signup i{
+        font-size: 20px;
+    }
+    
+    .form-inputs-signup input::placeholder {
+        font-size: 15px;
+    }
+
+    .error i {
+        font-size: 12px;
     }
 }
 
