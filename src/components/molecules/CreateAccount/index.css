@@ -351,6 +351,12 @@
     .create-account-footer {
         margin-top: 20px;
     }
+
+    .signup-input-name, .signup-input-cpf, .signup-input-telephone, .signup-input-email, .signup-input-password, .signup-input-confirm-password {
+        height: 10%;
+        margin-top: 10px;
+        margin-bottom: 1px;
+    }
 }
 
 @media screen and (min-width: 425px){
