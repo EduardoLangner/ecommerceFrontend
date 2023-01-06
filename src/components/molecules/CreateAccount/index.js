@@ -86,9 +86,9 @@ const CreateAccount = () => {
         console.log(`handlePassword: ${value}`)
     }
 
-    const handleConfirmPassword = () => {
+    const handleConfirmPassword = (value) => {
         
-        if(confirmPassword !== password || confirmPassword === '') {
+        if(value !== password || value === '') {
             setConfirmPasswordError(true)
             document.querySelector('.signup-input-confirm-password').style.borderBottom = '1.5px solid red'       
         } else {
@@ -337,7 +337,7 @@ const CreateAccount = () => {
                                     <input type='password' placeholder='Confirme sua senha*'
                                         className='input-confirm-password'
                                         value={confirmPassword}
-                                        onInput={handleConfirmPassword}
+                                        onInput={(e) => {handleConfirmPassword(e.target.value)}}
                                         onChange={(e) => {setConfirmPassword(e.target.value)}}>
                                     </input>
                                 </i>
