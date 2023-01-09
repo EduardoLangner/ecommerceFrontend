@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Logo from '../../../assets/logo.png'
 import { Link } from 'react-router-dom'
 import { validateName, validateTelephone, validadeEmail } from '../../../utils/regex.js'
@@ -25,9 +25,9 @@ const CreateAccount = () => {
     const [eyeConfirmPassword, setEyeConfirmPassword] = useState('eye')
     
 
-    const handleName = () => {
+    const handleName = (value) => {
 
-        if(!validateName.test(name) || name === '') {
+        if(!validateName.test(value) || value === '') {
             setNameError(true)
             document.querySelector('.signup-input-name').style.borderBottom = '1.5px solid red'
         } else {
@@ -36,26 +36,29 @@ const CreateAccount = () => {
         }
     }
 
-    const handleCPF = () => {
+    const handleCPF = (value) => {
         
-        if(isValidCPF(cpf) === false || cpf === '') {
+        if(isValidCPF(value) === false || value === '') {
             setCPFError(true)
             document.querySelector('.signup-input-cpf').style.borderBottom = '1.5px solid red'
         } else {
             setCPFError(false)
             document.querySelector('.signup-input-cpf').style.borderBottom = '1.5px solid green'
         }
+
     }
 
-    const handleTelephone = () => {
+    const handleTelephone = (value) => {
 
-        if(!validateTelephone.test(telephone) || telephone === '') {
+        if(!validateTelephone.test(value) || value === '') {
             setTelephoneError(true)
             document.querySelector('.signup-input-telephone').style.borderBottom = '1.5px solid red'
         } else {
             setTelephoneError(false)
             document.querySelector('.signup-input-telephone').style.borderBottom = '1.5px solid green'
         }
+
+        console.log(value)
     }
     
     const handleEmail = () => {
@@ -259,8 +262,9 @@ const CreateAccount = () => {
                                     <input type='text' placeholder='Nome completo*' 
                                         className='input-name' 
                                         value={name} 
-                                        onInput={handleName}
-                                        onChange={(e) => {setName(e.target.value)}}>
+                                        onChange={(e) => {
+                                            handleName(e.target.value)
+                                            setName(e.target.value) }}>
                                     </input>
                                 </i>
                             </div>{nameError && <div className='error'><i className="bi bi-exclamation-triangle triangle"><p className='name-error'>Por favor, insira seu nome completo.</p></i></div>}
@@ -271,7 +275,7 @@ const CreateAccount = () => {
                                         className='input-cpf'
                                         value={cpf}
                                         maxLength='14'
-                                        onInput={handleCPF}
+                                        onInput={(e) => handleCPF(e.target.value)}
                                         onChange={(e) => {setCPF(maskCpf(e.target.value))}}>
                                     </input>
                                 </i>
@@ -282,7 +286,7 @@ const CreateAccount = () => {
                                     <input type='tel' placeholder='Telefone*' className='input-telephone'
                                         value={telephone}  
                                         maxLength='15'
-                                        onInput={handleTelephone}
+                                        onInput={(e) => handleTelephone(e.target.value)}
                                         onChange={(e) => {setTelephone(maskTelephone(e.target.value))}}>
                                     </input>
                                 </i>
