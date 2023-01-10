@@ -2,11 +2,14 @@ import React from 'react'
 import { useState } from 'react'
 import Logo from '../../../assets/logo.png'
 import { Link } from 'react-router-dom'
-import { validateName, validateTelephone, validadeEmail } from '../../../utils/regex.js'
 import validator from 'validator'
 import './index.css'
 
 const CreateAccount = () => {
+
+    const validateName = new RegExp(/\b[A-Za-zÀ-ú][A-Za-zÀ-ú]+,?\s[A-Za-zÀ-ú][A-Za-zÀ-ú]{2,19}\b/)
+    const validateTelephone = new RegExp(/(\([1-9]{2}\)\s)(\d{4,5}-\d{4})/)
+    const validadeEmail = new RegExp(/^[a-z0-9.]+@[a-z0-9]+\.[a-z]{3}$/i)
 
     const [name, setName] = useState('')
     const [cpf, setCPF] = useState('')
@@ -25,7 +28,7 @@ const CreateAccount = () => {
     const [eyeConfirmPassword, setEyeConfirmPassword] = useState('eye')
     
 
-    const handleName = (value) => {
+    function handleName(value){
 
         if(!validateName.test(value) || value === '') {
             setNameError(true)
@@ -36,7 +39,7 @@ const CreateAccount = () => {
         }
     }
 
-    const handleCPF = (value) => {
+    function handleCPF(value){
         
         if(isValidCPF(value) === false || value === '') {
             setCPFError(true)
@@ -48,7 +51,7 @@ const CreateAccount = () => {
 
     }
 
-    const handleTelephone = (value) => {
+    function handleTelephone(value){
 
         if(!validateTelephone.test(value) || value === '') {
             setTelephoneError(true)
@@ -58,12 +61,13 @@ const CreateAccount = () => {
             document.querySelector('.signup-input-telephone').style.borderBottom = '1.5px solid green'
         }
 
-        console.log(value)
+        console.log('valor' + value)
+        console.log('telefone' + telephone)
     }
     
-    const handleEmail = () => {
+    function handleEmail(value){
 
-        if(!validadeEmail.test(email) || email === '') {
+        if(!validadeEmail.test(value) || value === '') {
             setEmailError(true)
             document.querySelector('.signup-input-email').style.borderBottom = '1.5px solid red'
         } else {
@@ -72,7 +76,7 @@ const CreateAccount = () => {
         }
     }
 
-    const handlePassword = (value) => {
+    function handlePassword(value){
 
         if(value === '' || password === '') {
             setPasswordError(true)
@@ -89,7 +93,7 @@ const CreateAccount = () => {
         console.log(`handlePassword: ${value}`)
     }
 
-    const handleConfirmPassword = (value) => {
+    function handleConfirmPassword(value){
         
         if(value !== password || value === '') {
             setConfirmPasswordError(true)
@@ -102,12 +106,12 @@ const CreateAccount = () => {
     }
 
     const validateInputs = () => {
-        handleName()
-        handleCPF()
-        handleTelephone()
-        handleEmail()
-        handlePassword()
-        handleConfirmPassword()
+        handleName(name)
+        handleCPF(cpf)
+        handleTelephone(telephone)
+        handleEmail(email)
+        handlePassword(password)
+        handleConfirmPassword(confirmPassword)
     }
 
     const validatePassword = (value) => {
@@ -297,8 +301,9 @@ const CreateAccount = () => {
                                     <input type='email' placeholder='E-mail*' 
                                         className='input-email' 
                                         value={email} 
-                                        onInput={handleEmail}
-                                        onChange={(e) => {setEmail(e.target.value)}}>
+                                        onChange={(e) => {
+                                            handleEmail(e.target.value)
+                                            setEmail(e.target.value)}}>
                                         </input>
                                     </i>
                             </div>{emailError && <div className='error'><i className="bi bi-exclamation-triangle triangle"><p className='email-error'>O E-mail inserido não é inválido</p></i></div>}
