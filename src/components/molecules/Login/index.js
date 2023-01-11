@@ -7,27 +7,8 @@ const Login = () => {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const [emailError, setEmailError] = useState(false)
-    const [passwordError, setPasswordError] = useState(false)
     const [eyePassword, setEyePassword] = useState('eye')
-
-    const validateInputs = () => {
-        if (email === '') {
-            setEmailError(true)
-            document.querySelector('.login-input-email').style.borderBottom = '1.5px solid red'
-        } else {
-            setEmailError(false)
-            document.querySelector('.login-input-email').style.borderBottom = '1.5px solid green'
-        }
-
-        if (password === '') {
-            setPasswordError(true)
-            document.querySelector('.login-input-password').style.borderBottom = '1.5px solid red'
-        } else {
-            setPasswordError(false)
-            document.querySelector('.login-input-password').style.borderBottom = '1.5px solid green'
-        }
-    }
+    // const [error, setError] = useState(false)
 
     const visiblePassword = () => {
 
@@ -41,6 +22,18 @@ const Login = () => {
             setEyePassword('eye')
         }
     }
+
+    // const validateInputs = () => {
+    //     if(email === '' || password === '') {
+    //         setError(true)
+    //         document.querySelector('.login-input-email').style.borderBottom = '1.5px solid red'
+    //         document.querySelector('.login-input-password').style.borderBottom = '1.5px solid red'
+    //     } else if(email !== '' || password !== '') {
+    //         setError(false)
+    //         document.querySelector('.login-input-email').style.borderBottom = '1.5px solid black'
+    //         document.querySelector('.login-input-password').style.borderBottom = '1.5px solid black'
+    //     }
+    // }
 
     return (
         <div className='login'>
@@ -58,7 +51,7 @@ const Login = () => {
                                     onChange={(e) => {setEmail(e.target.value)}}>
                                     </input>
                                 </i>
-                            </div>{emailError && <div className='error'><i className="bi bi-exclamation-triangle triangle"><p className='name-error'>O campo E-mail não pode ser vazio</p></i></div>}
+                            </div>
                             
                             <div className='login-input-password'>
                                 <i className='bi bi-lock icon-password'>
@@ -70,9 +63,9 @@ const Login = () => {
                                 <div className='icon-eye-password-login'>
                                     <i onClick={visiblePassword} className={`bi bi-${eyePassword}`}></i>
                                 </div>
-                            </div>{passwordError && <div className='error'><i className="bi bi-exclamation-triangle triangle"><p className='name-error'>O campo senha não pode ser vazio</p></i></div>}
+                            </div>
                         </form>
-                        <button className='login-button' type='submit' onClick={validateInputs}>Login</button>
+                        <button className='login-button' type='submit'>Login</button>
                         <div className='login-footer'>
                             <p className='login-click'>Não possui cadastro? <Link className='click' to='/signup'>Clique aqui</Link></p>
                         </div>

@@ -314,8 +314,7 @@ const CreateAccount = () => {
                                             className='input-password' 
                                             value={password}
                                             onChange={(e) => {setPassword(e.target.value, validatePassword(e.target.value), handlePassword(e.target.value))}}
-                                            onInput={() => {
-                                                setInvisible('visible')}}>
+                                            onInput={() => {setInvisible('visible')}}>
                                     </input>
                                 </i>
                                 <div className='icon-eye-password-signup'>
